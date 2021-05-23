@@ -1,0 +1,82 @@
+// header styles
+.header2
+     width: 100%
+     height: 60px
+     position: absolute
+     top: 0
+     left: 0
+     z-index: 1006
+     background-color: rgb(255,255,255)
+     .nav
+          height: 100%
+          display: flex
+          align-items: center
+          justify-content: space-between
+          .img1
+               margin: 13px
+               width: 30%
+               height: 10%
+          .menu-toogle
+               color: #fff
+               font-size: 20px
+               position: absolute
+               top: 50%
+               transform: translateY(-50%)
+               right: 2.5rem
+               cursor: pointer
+               z-index: 1500
+               color: rgb(36,0,71)
+               .fa-times
+                    display: none
+          .nav-list
+               list-style: none
+               position: fixed
+               top: 0
+               left: 0
+               width: 80%
+               height: 700px
+               background-color: rgb(36,0,71)
+               padding: 30px
+               display: flex
+               flex-direction: column
+               justify-content: space-around
+               z-index: 1250
+               transform: translateX(-100%)
+               transition: transform .5s
+               .nav-item
+                    border-bottom: 2px solid rgba(255,255,255,.3)
+                    .nav-link
+                         display: block
+                         color: white
+                         font-size: 16px
+                         letter-spacing: 2px
+                         text-transform: uppercase
+                         margin-right: -2px
+                         transtion: color .5s
+                    .nav-link:hover
+                         color: white
+     .nav::before
+          content: ''
+          position: fixed
+          top: 0
+          left: 0
+          width: 100vh
+          height: 100vh
+          background-color: rgba(0,0,0,.8)
+          z-index: 1000
+          opacity: 0
+          transform: scale(0)
+          transition: opacify .5s
+.open 
+     header
+          .nav
+               .menu-toogle
+                    .fa-times
+                         display: block
+                    .fa-bars
+                         display: none
+               .nav-list
+                    transform: translateX(0)
+          .nav::before
+               opacity: 1
+               transform: scale(1)
